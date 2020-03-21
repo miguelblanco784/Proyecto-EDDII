@@ -21,11 +21,11 @@ public class Investigador {
     }
 
     public Investigador(int codigo, String nombre, String fechadeingreso, int codigo_carrera, int estado) throws ByteOverweightException {
-        this.codigo = codigo;
-        this.nombre = nombre;
-        this.fechadeingreso = fechadeingreso;
-        this.codigo_carrera = codigo_carrera;
-        this.estado = estado;
+        setCodigo(codigo);
+        setNombre(nombre);
+        setFechadeingreso(fechadeingreso);
+        setCodigo_carrera(codigo_carrera);
+        setEstado(estado);
     }
 
     public int getCodigo() {
