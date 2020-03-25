@@ -1,0 +1,28 @@
+Objetos y bits por registro
+*Carrera:
+	Codigo (3 bits)
+	Nombre (25 bits)
+	Estado (1 bit)
+
+*Investigadores:
+	Codigo (5 bits)
+	Nombre (30 bits)
+	Fecha de Ingreso (10 bits)
+	Carrera de Pertenencia (25 bits)
+	Estado (1 bit)
+
+*Proyectos:
+	Codigo(6 bits)
+	Nombre/Tema (50 bits)
+	Codigo Investigador (5 bits)
+	Fecha Inicio (10 bits)
+	Fecha Fin (10 bits)
+	Estado (4 bits)
+
+*Publicaciones:
+	Codigo(7 bits)
+	Codigo de Proyecto (6 bits)
+	Fecha (10 bits)
+	Revista/Conferencia (20 bits)
+	
+
