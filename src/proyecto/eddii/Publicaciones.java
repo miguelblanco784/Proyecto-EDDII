@@ -11,10 +11,10 @@ package proyecto.eddii;
  */
 public class Publicaciones {
     static String message="Supera el numero de bits";
-    private int codigo;
-    private int codigo_de_proyecto;
-    private String fecha;
-    private String revista;
+    private Campo codigo;
+    private Campo codigo_de_proyecto;
+    private Campo fecha;
+    private Campo revista;
     
     public Publicaciones(){    
     }
@@ -26,49 +26,49 @@ public class Publicaciones {
         setRevista(revista);
     }
 
-    public int getCodigo() {
+    public Campo getCodigo() {
         return codigo;
     }
 
     public void setCodigo(int codigo) throws ByteOverweightException {
         if (codigo<=9999999) {
-            this.codigo=codigo;
+            this.codigo=new Campo(Integer.toString(codigo),7,"int");
         }else{
             throw new ByteOverweightException(message);
         }
     }
 
-    public int getCodigo_de_proyecto() {
+    public Campo getCodigo_de_proyecto() {
         return codigo_de_proyecto;
     }
 
     public void setCodigo_de_proyecto(int codigo_de_proyecto) throws ByteOverweightException {
         if (codigo_de_proyecto<=999999) {
-            this.codigo_de_proyecto=codigo_de_proyecto;
+            this.codigo_de_proyecto=new Campo(Integer.toString(codigo_de_proyecto),6,"int");
         }else{
             throw new ByteOverweightException(message);
         }
     }
 
-    public String getFecha() {
+    public Campo getFecha() {
         return fecha;
     }
 
     public void setFecha(String fecha) throws ByteOverweightException {
         if (fecha.length()<=10) {
-            this.fecha=fecha;
+            this.fecha=new Campo(fecha,10,"String");
         }else{
             throw new ByteOverweightException(message);
         }
     }
 
-    public String getRevista() {
+    public Campo getRevista() {
         return revista;
     }
 
     public void setRevista(String revista) throws ByteOverweightException {
         if (revista.length()<=20) {
-            this.revista=revista;
+            this.revista=new Campo(revista,20,"String");
         }else{
             throw new ByteOverweightException(message);
         }

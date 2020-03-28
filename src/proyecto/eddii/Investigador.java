@@ -11,11 +11,11 @@ package proyecto.eddii;
  */
 public class Investigador {
     static String message="Supera el numero de bits";
-    private int codigo;
-    private String nombre;
-    private String fechadeingreso;
-    private int codigo_carrera;
-    private int estado;
+    private Campo codigo;
+    private Campo nombre;
+    private Campo fechadeingreso;
+    private Campo codigo_carrera;
+    private Campo estado;
 
     public Investigador() {
     }
@@ -28,61 +28,61 @@ public class Investigador {
         setEstado(estado);
     }
 
-    public int getCodigo() {
+    public Campo getCodigo() {
         return codigo;
     }
 
     public void setCodigo(int codigo) throws ByteOverweightException {
         if (codigo<=9999) {
-            this.codigo=codigo;
+            this.codigo=new Campo(Integer.toString(codigo),4,"int");
         }else{
             throw new ByteOverweightException(message);
         }
     }
 
-    public String getNombre() {
+    public Campo getNombre() {
         return nombre;
     }
 
     public void setNombre(String nombre) throws ByteOverweightException {
         if (nombre.length()<=30) {//validacion de 30 bytes
-            this.nombre=nombre;
+            this.nombre=new Campo(nombre,30,"String");
         }else{
             throw new ByteOverweightException(message);
         }
     }
 
-    public String getFechadeingreso() {
+    public Campo getFechadeingreso() {
         return fechadeingreso;
     }
 
     public void setFechadeingreso(String fechadeingreso) throws ByteOverweightException {
         if (fechadeingreso.length()<=10) {//validacion de 10 bytes
-            this.fechadeingreso=fechadeingreso;
+            this.fechadeingreso=new Campo(fechadeingreso,10,"String");
         }else{
             throw new ByteOverweightException(message);
         }
     }
 
-    public int getCodigo_carrera() {
+    public Campo getCodigo_carrera() {
         return codigo_carrera;
     }
 
     public void setCodigo_carrera(int codigo_carrera) throws ByteOverweightException {
         if (codigo_carrera>=999) {
-            this.codigo_carrera=codigo_carrera;
+            this.codigo_carrera=new Campo(Integer.toString(codigo_carrera),3,"int");
         }else{
             throw new ByteOverweightException(message);
         }
     }
 
-    public int getEstado() {
+    public Campo getEstado() {
         return estado;
     }
 
     public void setEstado(int estado) throws ByteOverweightException {
         if (estado==0||estado==1) {//validacion de que el estado solo puede ser 0 o 1. 0=inactivo, 1=activo
-            this.estado=estado;
+            this.estado=new Campo(Integer.toString(estado),1,"int");
         }else{
             throw new ByteOverweightException(message);
         }
