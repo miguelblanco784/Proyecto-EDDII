@@ -9,6 +9,6 @@ package proyecto.eddii;
  *
  * @author Francisco Pagoaga
  */
-public class ArchivodeTexto {
+public class Archivo {
     
 }
