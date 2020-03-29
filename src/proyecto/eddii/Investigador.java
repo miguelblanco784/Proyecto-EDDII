@@ -88,5 +88,25 @@ public class Investigador {
         }
     }
     
-    
+    public String toString(){
+        String registro="";
+        registro+=getCodigo().getNombre();
+        for (int i = 0; i < (getCodigo().getSize())-(getCodigo().getNombre().length()); i++) {
+            registro+="$";
+        }
+        registro+="|"+getNombre().getNombre();
+        for (int i = 0; i < (getNombre().getSize())-(getNombre().getNombre().length()); i++) {
+            registro+="$";
+        }
+        registro+="|"+getFechadeingreso().getNombre();
+        for (int i = 0; i < (getFechadeingreso().getSize())-(getFechadeingreso().getNombre().length()); i++) {
+            registro+="$";
+        }
+        registro+="|"+getCodigo_carrera().getNombre();
+        for (int i = 0; i < (getCodigo_carrera().getSize())-(getCodigo_carrera().getNombre().length()); i++) {
+            registro+="$";
+        }
+        registro+="|"+getEstado().getNombre();
+        return registro;
+    }
 }

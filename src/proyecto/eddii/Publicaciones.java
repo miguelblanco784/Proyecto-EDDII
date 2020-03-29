@@ -74,5 +74,25 @@ public class Publicaciones {
         }
     }
     
+    public String toString(){
+        String registro="";
+        registro+=getCodigo();
+        for (int i = 0; i < (getCodigo().getSize())- (getCodigo().getNombre().length()); i++) {
+            registro+="$";
+        }
+        registro+="|"+getCodigo_de_proyecto();
+        for (int i = 0; i < (getCodigo_de_proyecto().getSize())-(getCodigo_de_proyecto().getNombre().length()); i++) {
+            registro+="$";
+        }
+        registro+="|"+getFecha().getNombre();
+        for (int i = 0; i < (getFecha().getSize())-(getFecha().getNombre().length()); i++) {
+            registro+="$";
+        }
+        registro+="|"+getRevista().getNombre();
+        for (int i = 0; i < (getRevista().getSize())-(getRevista().getNombre().length()); i++) {
+            registro+="$";
+        }
+        return registro;
+    }
     
 }
