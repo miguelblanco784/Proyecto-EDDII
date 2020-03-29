@@ -59,5 +59,18 @@ public class Carrera {
         }
     }
     
+    public String toString(){
+        String registro="";
+        registro+=getCodigo().getNombre();
+        for (int i = 0; i < (getCodigo().getSize())-(getCodigo().getNombre().length()); i++) {
+            registro+="$";
+        }
+        registro+="|"+getNombre().getNombre();
+        for (int i = 0; i < (getNombre().getSize())-(getNombre().getNombre().length()); i++) {
+            registro+="$";
+        }
+        registro+="|"+getEstado().getNombre();
+        return registro;
+    }
         
 }
