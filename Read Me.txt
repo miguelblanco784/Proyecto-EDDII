@@ -17,7 +17,7 @@ Objetos y bits por registro
 	Codigo Investigador (5 bytes)
 	Fecha Inicio (10 bytes)
 	Fecha Fin (10 bytes)
-	Estado (4 bytes)
+	Estado (1 bytes)
 
 *Publicaciones:
 	Codigo(7 bytes)
