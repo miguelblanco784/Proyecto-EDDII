@@ -13,7 +13,7 @@ public class B_Tree {
 
     private static final class Node {
 
-        private int m;                             // number of children
+        private int   m;                             // number of children
         private Entry[] children = new Entry[M];   // the array of children
 
         private Node(int k) {
