@@ -9,8 +9,8 @@ package proyecto.eddii;
  *
  * @author Francisco Pagoaga
  */
-public class BitOverweightException extends Exception {
-    public BitOverweightException(String message){
+public class ByteOverweightException extends Exception {
+    public ByteOverweightException(String message){
         super(message);
     }
 }
