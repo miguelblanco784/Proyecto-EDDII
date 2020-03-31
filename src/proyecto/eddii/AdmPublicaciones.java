@@ -12,6 +12,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -21,7 +23,7 @@ public class AdmPublicaciones extends TDAarchivo {
     private File archivo=null;
     private ArrayList<Publicaciones> publicaciones;
     
-    AdmPublicaciones (B_Tree publicaciones){
+    AdmPublicaciones (){
         archivo= new File("publicaciones.txt");
         
     }
@@ -34,7 +36,9 @@ public class AdmPublicaciones extends TDAarchivo {
         this.publicaciones = publicaciones;
     }
     
-    
+    public void setPublicacion (Publicaciones p ){
+        publicaciones.add(p);
+    }
     
     @Override
     void escribir(){
@@ -49,9 +53,20 @@ public class AdmPublicaciones extends TDAarchivo {
                 bw.write(t.getFecha().getNombre()+";");
                 bw.write(t.getRevista().getNombre()+";");
             }
+            bw.flush();
         }
         catch(IOException e){
             
+        }
+        try {
+            bw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(AdmCarrera.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            fw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(AdmCarrera.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
