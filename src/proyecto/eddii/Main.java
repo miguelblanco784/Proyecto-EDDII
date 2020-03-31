@@ -27,7 +27,6 @@ public class Main extends javax.swing.JFrame {
         
     }
     
-    jd_fecha = new com.toedter.calendar.JDateChooser();
     
     /**
      * This method is called from within the constructor to initialize the form.
