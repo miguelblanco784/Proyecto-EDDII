@@ -174,11 +174,11 @@ public class B_Tree {
         return k1.compareTo(k2) == 0;
     }
 
-    /*public static void main(String[] args) {
-        ESTE MUESTRA COMO AGREGAR
-        BTree<String, String> st = new BTree<String, String>();
+    public static void main(String[] args) {
+       // ESTE MUESTRA COMO AGREGAR
+       // BTree<String, String> st = new BTree<String, String>();
 
-        st.put("www.cs.princeton.edu", "128.112.136.12");
+        /*st.put("www.cs.princeton.edu", "128.112.136.12");
         st.put("www.cs.princeton.edu", "128.112.136.11");
         st.put("www.princeton.edu",    "128.112.128.15");
         st.put("www.yale.edu",         "130.132.143.21");
@@ -208,6 +208,6 @@ public class B_Tree {
         StdOut.println("size:    " + st.size());
         StdOut.println("altura:  " + st.altura());
         StdOut.println(st);
-        StdOut.println();
-    }*/ 
+        StdOut.println();*/
+    }
 }
