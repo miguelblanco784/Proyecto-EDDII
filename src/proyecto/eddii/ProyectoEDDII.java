@@ -6,7 +6,8 @@
 package proyecto.eddii;
 
 import java.util.Scanner;
-
+import java.security.Key;
+import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 /**
  *
  * @author migue
@@ -30,6 +31,7 @@ public class ProyectoEDDII {
         System.out.println("PROGRAMAR ES MI PASION");*/
         try {
             Carrera ejemplo=new Carrera(12,"Ingenieria en sistemas",1);
+            B_Tree carreras = new B_Tree();
             System.out.println(ejemplo.toString());
         } catch (Exception e) {
             e.printStackTrace();

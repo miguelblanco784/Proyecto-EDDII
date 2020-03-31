@@ -10,7 +10,7 @@ package proyecto.eddii;
  * @author mauri
  */
 public abstract class TDAarchivo {
-    abstract void guardar();
+    abstract void escribir();
     
     abstract void leer();
 }
