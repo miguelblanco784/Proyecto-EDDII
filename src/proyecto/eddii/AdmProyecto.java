@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  */
 public class AdmProyecto extends TDAarchivo{
     private File archivo=null;
-    private ArrayList<Proyecto> proyectos;
+    private ArrayList<Proyecto> proyectos=new ArrayList();
     
     AdmProyecto (){
         archivo= new File("proyectos.txt");
@@ -47,12 +47,7 @@ public class AdmProyecto extends TDAarchivo{
             fw=new FileWriter(archivo, false);
             bw=new BufferedWriter(fw);
             for (Proyecto t: proyectos) {
-                bw.write(t.getCodigo().getNombre()+";");
-                bw.write(t.getNombre().getNombre()+";");
-                bw.write(t.getCodigo_investigador().getNombre()+";");
-                bw.write(t.getFecha_inicio().getNombre()+";");
-                bw.write(t.getFecha_fin().getNombre()+";");
-                bw.write(t.getEstado().getNombre()+";");
+                bw.write(t.toString()+";");
             }
             bw.flush();
         }
@@ -80,12 +75,54 @@ public class AdmProyecto extends TDAarchivo{
                 sc = new Scanner(archivo);
                 sc.useDelimiter(";");
                 while (sc.hasNext()){
-                    Proyecto proyecto = new Proyecto(sc.nextInt(),
-                                                     sc.next(),
-                                                     sc.nextInt(),
-                                                     sc.next(),
-                                                     sc.next(),
-                                                     sc.nextInt());
+                    String temp =sc.next();
+                    String codigo="";
+                    for (int i = 0; i < temp.length(); i++) {
+                        if (temp.charAt(i)!='$'){
+                            codigo+=temp.charAt(i);
+                        }
+                    }
+                    temp=sc.next();
+                    String nombre="";
+                    for (int i = 0; i < temp.length(); i++) {
+                        if (temp.charAt(i)!='$'){
+                            nombre+=temp.charAt(i);
+                        }
+                    }
+                    temp=sc.next();
+                    String codinv="";
+                    for (int i = 0; i < temp.length(); i++) {
+                        if (temp.charAt(i)!='$'){
+                            codinv+=temp.charAt(i);
+                        }
+                    }
+                    temp=sc.next();
+                    String fechainicio="";
+                    for (int i = 0; i < temp.length(); i++) {
+                        if (temp.charAt(i)!='$'){
+                            fechainicio+=temp.charAt(i);
+                        }
+                    }
+                    temp=sc.next();
+                    String fechafin="";
+                    for (int i = 0; i < temp.length(); i++) {
+                        if (temp.charAt(i)!='$'){
+                            fechafin+=temp.charAt(i);
+                        }
+                    }
+                    temp=sc.next();
+                    String estado="";
+                    for (int i = 0; i < temp.length(); i++) {
+                        if (temp.charAt(i)!='$'){
+                            estado+=temp.charAt(i);
+                        }
+                    }
+                    Proyecto proyecto = new Proyecto(Integer.parseInt(codigo),
+                                                     nombre,
+                                                     Integer.parseInt(codinv),
+                                                     fechainicio,
+                                                     fechafin,
+                                                     Integer.parseInt(estado));
                     proyectos.add(proyecto);
                 }
             }

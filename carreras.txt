@@ -1,1 +1,1 @@
-12;Ingenieria en sistemas;1;
+12$;Ingenieria en sistemas$$$;1;

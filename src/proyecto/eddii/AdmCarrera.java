@@ -21,7 +21,7 @@ import java.util.logging.Logger;
  */
 public class AdmCarrera extends TDAarchivo{
     private File archivo=null;
-    private ArrayList<Carrera> carreras;
+    private ArrayList<Carrera> carreras = new ArrayList();
     
     AdmCarrera (){
         archivo= new File("carreras.txt");
@@ -35,7 +35,7 @@ public class AdmCarrera extends TDAarchivo{
         this.carreras = carreras;
     }
     
-    public void setCarrera (Carrera p ){
+    public void setCarrera (Carrera p){
         carreras.add(p);
     }
 
@@ -51,9 +51,7 @@ public class AdmCarrera extends TDAarchivo{
             fw=new FileWriter(archivo, false);
             bw=new BufferedWriter(fw);
             for (Carrera t : carreras) {
-                bw.write(t.getCodigo().getNombre()+";");
-                bw.write(t.getNombre().getNombre()+";");
-                bw.write(t.getEstado().getNombre()+";");
+                bw.write(t.toString()+";");
             }
             bw.flush();
         }
@@ -81,13 +79,34 @@ public class AdmCarrera extends TDAarchivo{
                 sc = new Scanner(archivo);
                 sc.useDelimiter(";");
                 while (sc.hasNext()){
-                    Carrera carrera = new Carrera(sc.nextInt(),
-                                                  sc.next(),
-                                                  sc.nextInt());
+                    String temp =sc.next();
+                    String codigo="";
+                    for (int i = 0; i < temp.length(); i++) {
+                        if (temp.charAt(i)!='$'){
+                            codigo+=temp.charAt(i);
+                        }
+                    }
+                    temp=sc.next();
+                    String nombre="";
+                    for (int i = 0; i < temp.length(); i++) {
+                        if (temp.charAt(i)!='$'){
+                            nombre+=temp.charAt(i);
+                        }
+                    }
+                    temp=sc.next();
+                    String estado="";
+                    for (int i = 0; i < temp.length(); i++) {
+                        if (temp.charAt(i)!='$'){
+                            estado+=temp.charAt(i);
+                        }
+                    }
+                    Carrera carrera = new Carrera(Integer.parseInt(codigo),
+                                                  nombre,
+                                                  1);
                     carreras.add(carrera);
                 }
             }
-            catch (FileNotFoundException | ByteOverweightException e){
+            catch (Exception e){
                 
             }
             sc.close();
