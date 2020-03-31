@@ -68,6 +68,7 @@ public class Main extends javax.swing.JFrame {
         activoinvetsigador = new javax.swing.JRadioButton();
         inactivoinvestigador = new javax.swing.JRadioButton();
         jButton10 = new javax.swing.JButton();
+        jCalendar1 = new com.toedter.calendar.JCalendar();
         AgregarProyecto = new javax.swing.JDialog();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
@@ -82,6 +83,8 @@ public class Main extends javax.swing.JFrame {
         jButton11 = new javax.swing.JButton();
         jLabel32 = new javax.swing.JLabel();
         jComboBox5 = new javax.swing.JComboBox<>();
+        jCalendar2 = new com.toedter.calendar.JCalendar();
+        jCalendar3 = new com.toedter.calendar.JCalendar();
         AgregarPublicacion = new javax.swing.JDialog();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -90,6 +93,7 @@ public class Main extends javax.swing.JFrame {
         jComboBox2 = new javax.swing.JComboBox<>();
         jLabel17 = new javax.swing.JLabel();
         jButton12 = new javax.swing.JButton();
+        jCalendar4 = new com.toedter.calendar.JCalendar();
         ModificarCarrera = new javax.swing.JDialog();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -109,6 +113,7 @@ public class Main extends javax.swing.JFrame {
         activoinvetsigador1 = new javax.swing.JRadioButton();
         inactivoinvestigador1 = new javax.swing.JRadioButton();
         jButton14 = new javax.swing.JButton();
+        jCalendar5 = new com.toedter.calendar.JCalendar();
         ModificarProyecto = new javax.swing.JDialog();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
@@ -123,6 +128,8 @@ public class Main extends javax.swing.JFrame {
         jButton15 = new javax.swing.JButton();
         jLabel31 = new javax.swing.JLabel();
         jComboBox4 = new javax.swing.JComboBox<>();
+        jCalendar6 = new com.toedter.calendar.JCalendar();
+        jCalendar7 = new com.toedter.calendar.JCalendar();
         ModificarPublicacion = new javax.swing.JDialog();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
@@ -131,6 +138,7 @@ public class Main extends javax.swing.JFrame {
         jComboBox6 = new javax.swing.JComboBox<>();
         jLabel36 = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
+        jCalendar8 = new com.toedter.calendar.JCalendar();
         list1 = new java.awt.List();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -267,25 +275,32 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jLabel5))
                         .addGap(18, 18, 18)
-                        .addComponent(NombreInvestigador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(27, 27, 27)
                         .addGroup(AgregarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(AgregarInvestigadorLayout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addComponent(NombreInvestigador, javax.swing.GroupLayout.DEFAULT_SIZE, 139, Short.MAX_VALUE)
+                                .addGroup(AgregarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(AgregarInvestigadorLayout.createSequentialGroup()
+                                        .addGap(0, 68, Short.MAX_VALUE)
+                                        .addComponent(jLabel7)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(AgregarInvestigadorLayout.createSequentialGroup()
+                                        .addGap(31, 31, 31)
+                                        .addComponent(jLabel8)
+                                        .addGap(14, 14, 14)
+                                        .addComponent(activoinvetsigador)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(inactivoinvestigador)
+                                        .addGap(0, 0, Short.MAX_VALUE))))
                             .addGroup(AgregarInvestigadorLayout.createSequentialGroup()
-                                .addComponent(jLabel8)
-                                .addGap(18, 18, 18)
-                                .addComponent(activoinvetsigador)
-                                .addGap(18, 18, 18)
-                                .addComponent(inactivoinvestigador)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AgregarInvestigadorLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton10)
-                        .addGap(172, 172, 172)))
-                .addGap(23, 23, 23))
+                                .addGap(10, 10, 10)
+                                .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
+            .addGroup(AgregarInvestigadorLayout.createSequentialGroup()
+                .addGap(261, 261, 261)
+                .addComponent(jButton10)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         AgregarInvestigadorLayout.setVerticalGroup(
             AgregarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -298,19 +313,18 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(NombreInvestigador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(AgregarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(AgregarInvestigadorLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel6))
-                    .addGroup(AgregarInvestigadorLayout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(AgregarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(activoinvetsigador)
-                            .addComponent(inactivoinvestigador))))
-                .addGap(18, 18, 18)
+                    .addComponent(jLabel6)
+                    .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addGroup(AgregarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(activoinvetsigador)
+                    .addComponent(inactivoinvestigador))
+                .addGap(21, 21, 21)
                 .addComponent(jButton10)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addGap(32, 32, 32))
         );
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -358,24 +372,31 @@ public class Main extends javax.swing.JFrame {
                                 .addGroup(AgregarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel13)
                                     .addComponent(jLabel11))
-                                .addGap(27, 27, 27)
-                                .addComponent(iniciado)
-                                .addGap(18, 18, 18)
-                                .addComponent(enviado)
-                                .addGap(18, 18, 18)
-                                .addComponent(publicado)
-                                .addGap(18, 18, 18))
+                                .addGroup(AgregarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(AgregarProyectoLayout.createSequentialGroup()
+                                        .addGap(27, 27, 27)
+                                        .addComponent(iniciado)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(enviado)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(publicado))
+                                    .addGroup(AgregarProyectoLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jCalendar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(AgregarProyectoLayout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(nombreproyecto, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(71, 71, 71)))
+                                .addComponent(nombreproyecto, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
                         .addGroup(AgregarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(AgregarProyectoLayout.createSequentialGroup()
                                 .addComponent(jLabel32)
                                 .addGap(18, 18, 18)
                                 .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel12)
+                            .addGroup(AgregarProyectoLayout.createSequentialGroup()
+                                .addComponent(jLabel12)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCalendar3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(rechazado)))
                     .addGroup(AgregarProyectoLayout.createSequentialGroup()
                         .addGap(233, 233, 233)
@@ -383,7 +404,7 @@ public class Main extends javax.swing.JFrame {
                     .addGroup(AgregarProyectoLayout.createSequentialGroup()
                         .addGap(335, 335, 335)
                         .addComponent(jButton11)))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         AgregarProyectoLayout.setVerticalGroup(
             AgregarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -401,8 +422,10 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(AgregarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
-                    .addComponent(jLabel12))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                    .addComponent(jLabel12)
+                    .addComponent(jCalendar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCalendar3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
                 .addGroup(AgregarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
                     .addComponent(iniciado)
@@ -448,17 +471,19 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(jLabel16)
                                 .addGap(18, 18, 18)
                                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel17))
+                            .addGroup(AgregarPublicacionLayout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addGap(18, 18, 18)
+                                .addComponent(jCalendar4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addContainerGap(146, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AgregarPublicacionLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(AgregarPublicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AgregarPublicacionLayout.createSequentialGroup()
-                                .addComponent(jLabel14)
-                                .addGap(52, 52, 52))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AgregarPublicacionLayout.createSequentialGroup()
-                                .addComponent(jButton12)
-                                .addGap(146, 146, 146))))))
+                        .addComponent(jLabel14)
+                        .addGap(52, 52, 52))))
+            .addGroup(AgregarPublicacionLayout.createSequentialGroup()
+                .addGap(161, 161, 161)
+                .addComponent(jButton12)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         AgregarPublicacionLayout.setVerticalGroup(
             AgregarPublicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -474,10 +499,12 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel16)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addComponent(jLabel17)
-                .addGap(18, 18, 18)
+                .addGroup(AgregarPublicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel17)
+                    .addComponent(jCalendar4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                 .addComponent(jButton12)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jLabel18.setText("Nombre:");
@@ -581,14 +608,14 @@ public class Main extends javax.swing.JFrame {
         ModificarInvestigadorLayout.setHorizontalGroup(
             ModificarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ModificarInvestigadorLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(ModificarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel23)
+                    .addComponent(jLabel22))
+                .addGap(18, 18, 18)
                 .addGroup(ModificarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ModificarInvestigadorLayout.createSequentialGroup()
-                        .addGap(25, 25, 25)
-                        .addGroup(ModificarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel23)
-                            .addComponent(jLabel22))
-                        .addGap(18, 18, 18)
-                        .addComponent(NombreInvestigador1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(NombreInvestigador1)
                         .addGap(27, 27, 27)
                         .addGroup(ModificarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(ModificarInvestigadorLayout.createSequentialGroup()
@@ -597,19 +624,23 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(jComboBox3, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(ModificarInvestigadorLayout.createSequentialGroup()
                                 .addComponent(jLabel25)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(activoinvetsigador1)
-                                .addGap(18, 18, 18)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(inactivoinvestigador1)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ModificarInvestigadorLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton14)
-                        .addGap(172, 172, 172)))
-                .addGap(23, 23, 23))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(23, 23, 23))
+                    .addGroup(ModificarInvestigadorLayout.createSequentialGroup()
+                        .addComponent(jCalendar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             .addGroup(ModificarInvestigadorLayout.createSequentialGroup()
-                .addGap(67, 67, 67)
-                .addComponent(jLabel21)
+                .addGroup(ModificarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ModificarInvestigadorLayout.createSequentialGroup()
+                        .addGap(67, 67, 67)
+                        .addComponent(jLabel21))
+                    .addGroup(ModificarInvestigadorLayout.createSequentialGroup()
+                        .addGap(176, 176, 176)
+                        .addComponent(jButton14)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ModificarInvestigadorLayout.setVerticalGroup(
@@ -623,19 +654,18 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(NombreInvestigador1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel24)
                     .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(ModificarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(ModificarInvestigadorLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel23))
-                    .addGroup(ModificarInvestigadorLayout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(ModificarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel25)
-                            .addComponent(activoinvetsigador1)
-                            .addComponent(inactivoinvestigador1))))
+                    .addComponent(jLabel23)
+                    .addComponent(jCalendar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addGroup(ModificarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel25)
+                    .addComponent(activoinvetsigador1)
+                    .addComponent(inactivoinvestigador1))
                 .addGap(18, 18, 18)
                 .addComponent(jButton14)
-                .addContainerGap(23, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jLabel26.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
@@ -683,33 +713,42 @@ public class Main extends javax.swing.JFrame {
                                 .addGroup(ModificarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel30)
                                     .addComponent(jLabel28))
-                                .addGap(27, 27, 27)
-                                .addComponent(iniciado1)
-                                .addGap(18, 18, 18)
-                                .addComponent(enviado1)
-                                .addGap(18, 18, 18)
-                                .addComponent(publicado1)
-                                .addGap(18, 18, 18))
+                                .addGroup(ModificarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(ModificarProyectoLayout.createSequentialGroup()
+                                        .addGap(27, 27, 27)
+                                        .addComponent(iniciado1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(enviado1)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(publicado1))
+                                    .addGroup(ModificarProyectoLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jCalendar6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(ModificarProyectoLayout.createSequentialGroup()
                                 .addComponent(jLabel27)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(nombreproyecto1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(71, 71, 71)))
+                                .addComponent(nombreproyecto1, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
                         .addGroup(ModificarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(rechazado1)
                             .addGroup(ModificarProyectoLayout.createSequentialGroup()
                                 .addGroup(ModificarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel29)
                                     .addComponent(jLabel31))
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(ModificarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(ModificarProyectoLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(ModificarProyectoLayout.createSequentialGroup()
+                                        .addGap(6, 6, 6)
+                                        .addComponent(jCalendar7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(ModificarProyectoLayout.createSequentialGroup()
                         .addGap(335, 335, 335)
                         .addComponent(jButton15))
                     .addGroup(ModificarProyectoLayout.createSequentialGroup()
                         .addGap(178, 178, 178)
                         .addComponent(jLabel26)))
-                .addContainerGap(81, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         ModificarProyectoLayout.setVerticalGroup(
             ModificarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -725,8 +764,10 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(ModificarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel28)
-                    .addComponent(jLabel29))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                    .addComponent(jLabel29)
+                    .addComponent(jCalendar6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCalendar7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 30, Short.MAX_VALUE)
                 .addGroup(ModificarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30)
                     .addComponent(iniciado1)
@@ -767,12 +808,11 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(jLabel35)
                                 .addGap(18, 18, 18)
                                 .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLabel36))
-                        .addContainerGap(146, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ModificarPublicacionLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton16)
-                        .addGap(146, 146, 146))
+                            .addGroup(ModificarPublicacionLayout.createSequentialGroup()
+                                .addComponent(jLabel36)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jCalendar8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(ModificarPublicacionLayout.createSequentialGroup()
                         .addComponent(jLabel34)
                         .addGap(18, 18, 18)
@@ -782,6 +822,10 @@ public class Main extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel33)
                 .addContainerGap())
+            .addGroup(ModificarPublicacionLayout.createSequentialGroup()
+                .addGap(157, 157, 157)
+                .addComponent(jButton16)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         ModificarPublicacionLayout.setVerticalGroup(
             ModificarPublicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -797,10 +841,12 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel35)
                     .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addComponent(jLabel36)
-                .addGap(18, 18, 18)
+                .addGroup(ModificarPublicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel36)
+                    .addComponent(jCalendar8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(jButton16)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1498,6 +1544,14 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
+    private com.toedter.calendar.JCalendar jCalendar1;
+    private com.toedter.calendar.JCalendar jCalendar2;
+    private com.toedter.calendar.JCalendar jCalendar3;
+    private com.toedter.calendar.JCalendar jCalendar4;
+    private com.toedter.calendar.JCalendar jCalendar5;
+    private com.toedter.calendar.JCalendar jCalendar6;
+    private com.toedter.calendar.JCalendar jCalendar7;
+    private com.toedter.calendar.JCalendar jCalendar8;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
