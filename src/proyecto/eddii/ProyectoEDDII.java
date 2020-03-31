@@ -5,8 +5,8 @@
  */
 package proyecto.eddii;
 
+import java.util.ArrayList;
 import java.util.Scanner;
-
 /**
  *
  * @author migue
@@ -30,7 +30,8 @@ public class ProyectoEDDII {
         System.out.println("PROGRAMAR ES MI PASION");*/
         try {
             Carrera ejemplo=new Carrera(12,"Ingenieria en sistemas",1);
-            System.out.println(ejemplo.toString());
+            System.out.println(ejemplo);
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
