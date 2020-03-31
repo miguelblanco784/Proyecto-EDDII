@@ -95,7 +95,7 @@ public class Proyecto {
     }
 
     public void setEstado(int estado) throws ByteOverweightException {
-        if (estado==1||estado==2||estado==3||estado==4) {//cada uno de los numero representa uno de las multiples opcioness de estado
+        if (estado==0||estado==1||estado==2||estado==3) {//cada uno de los numero representa uno de las multiples opcioness de estado
             this.estado=new Campo(Integer.toString(estado),1,"int");
         }else{
             throw new ByteOverweightException(message);
