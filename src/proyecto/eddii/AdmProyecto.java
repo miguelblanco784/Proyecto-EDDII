@@ -12,6 +12,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -21,7 +23,7 @@ public class AdmProyecto extends TDAarchivo{
     private File archivo=null;
     private ArrayList<Proyecto> proyectos;
     
-    AdmProyecto (B_Tree proyectos){
+    AdmProyecto (){
         archivo= new File("proyectos.txt");
     }
 
@@ -33,7 +35,9 @@ public class AdmProyecto extends TDAarchivo{
         this.proyectos = proyectos;
     }
     
-    
+    public void setProyecto (Proyecto p ){
+        proyectos.add(p);
+    }
     
     @Override
     void escribir(){
@@ -50,9 +54,20 @@ public class AdmProyecto extends TDAarchivo{
                 bw.write(t.getFecha_fin().getNombre()+";");
                 bw.write(t.getEstado().getNombre()+";");
             }
+            bw.flush();
         }
         catch(IOException e){
             
+        }
+        try {
+            bw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(AdmCarrera.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            fw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(AdmCarrera.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -77,6 +92,7 @@ public class AdmProyecto extends TDAarchivo{
             catch (FileNotFoundException | ByteOverweightException e){
                 
             }
+            sc.close();
         }
     }
 }

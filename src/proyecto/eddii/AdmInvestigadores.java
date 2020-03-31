@@ -12,6 +12,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -21,7 +23,7 @@ public class AdmInvestigadores extends TDAarchivo {
     private File archivo=null;
     private ArrayList<Investigador> investigadores;
     
-    AdmInvestigadores (B_Tree investigadores){
+    AdmInvestigadores (){
         archivo= new File("investigadores.txt");
     }
 
@@ -34,7 +36,9 @@ public class AdmInvestigadores extends TDAarchivo {
     }
     
     
-    
+    public void setInvestigador (Investigador p ){
+        investigadores.add(p);
+    }
     
     
     @Override
@@ -51,9 +55,20 @@ public class AdmInvestigadores extends TDAarchivo {
                 bw.write(t.getCodigo_carrera().getNombre()+";");
                 bw.write(t.getEstado().getNombre()+";");
             }
+            bw.flush();
         }
         catch(IOException e){
             
+        }
+        try {
+            bw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(AdmCarrera.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            fw.close();
+        } catch (IOException ex) {
+            Logger.getLogger(AdmCarrera.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -78,6 +93,7 @@ public class AdmInvestigadores extends TDAarchivo {
             catch (FileNotFoundException | ByteOverweightException e){
                 
             }
+            sc.close();
         }
     }
 }
