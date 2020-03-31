@@ -69,7 +69,7 @@ public class Investigador {
     }
 
     public void setCodigo_carrera(int codigo_carrera) throws ByteOverweightException {
-        if (codigo_carrera>=999) {
+        if (codigo_carrera<=999) {
             this.codigo_carrera=new Campo(Integer.toString(codigo_carrera),3,"int");
         }else{
             throw new ByteOverweightException(message);
