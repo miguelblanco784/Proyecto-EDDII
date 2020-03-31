@@ -1139,6 +1139,8 @@ public class Main extends javax.swing.JFrame {
                     estado=0;
                 }
                 carreras.getCarreras().add(new Carrera(carreras.getCarreras().size()+1,nombrecarrera.getText(),estado));
+                carreras.escribir();
+                carreras.leer();
                 JOptionPane.showMessageDialog(AgregarCarrera, "Carrera creada");
                 setTablaCarrera();
             } catch (Exception e) {
@@ -1184,6 +1186,8 @@ public class Main extends javax.swing.JFrame {
                 }
                 investigadores.getInvestigadores().add(new Investigador(investigadores.getInvestigadores().size()+1,NombreInvestigador.getText(),fecha,selectedvalue,activo));
                 JOptionPane.showMessageDialog(AgregarInvestigador, "Investigador creado");
+                investigadores.escribir();
+                investigadores.leer();
                 setTablaInvestigadores();
                 AgregarInvestigador.dispose();
             } catch (Exception e) {
@@ -1222,6 +1226,8 @@ public class Main extends javax.swing.JFrame {
                 }
                 proyectos.getProyectos().add(new Proyecto(proyectos.getProyectos().size()+1,nombreproyecto.getText(),selectedvalue,fechainicio,fechafin,estado));
                 JOptionPane.showMessageDialog(AgregarProyecto, "Proyecto creado");
+                proyectos.escribir();
+                proyectos.leer();
                 setTablaProyectos();
                 AgregarProyecto.dispose();
             } catch (Exception e) {
@@ -1246,6 +1252,8 @@ public class Main extends javax.swing.JFrame {
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                 String fecha=sdf.format(jCalendar4.getDate());
                 publicaciones.getPublicaciones().add(new Publicaciones(publicaciones.getPublicaciones().size()+1,selectedvalue,fecha,nombrepublicacion.getText()));
+                publicaciones.escribir();
+                publicaciones.leer();
                 JOptionPane.showMessageDialog(AgregarPublicacion, "Publicacion Agregada");
                 setTablaPublicaciones();
                 AgregarPublicacion.dispose();
@@ -1276,6 +1284,8 @@ public class Main extends javax.swing.JFrame {
                 
                 Carrera reemplazo=new Carrera(Integer.parseInt(carreras.getCarreras().get(jTable1.getSelectedRow()).getCodigo().getNombre()),nombrecarrera1.getText(),activo);
                 carreras.getCarreras().set(jTable1.getSelectedRow(),reemplazo);
+                carreras.escribir();
+                carreras.leer();
                 setTablaCarrera();
                 ModificarCarrera.dispose();
             } catch (Exception e) {
@@ -1305,6 +1315,8 @@ public class Main extends javax.swing.JFrame {
                 }
                 Investigador reemplazo=new Investigador(Integer.parseInt(investigadores.getInvestigadores().get(jTable2.getSelectedRow()).getCodigo().getNombre()),NombreInvestigador1.getText(),fecha,selectedvalue,activo);
                 investigadores.getInvestigadores().set(jTable2.getSelectedRow(),reemplazo);
+                investigadores.escribir();
+                investigadores.leer();
                 JOptionPane.showMessageDialog(AgregarInvestigador, "Investigador Modificado");
                 setTablaInvestigadores();
                 ModificarInvestigador.dispose();
@@ -1336,6 +1348,8 @@ public class Main extends javax.swing.JFrame {
                 }
                 Proyecto reemplazo=new Proyecto(Integer.parseInt(proyectos.getProyectos().get(jTable3.getSelectedRow()).getCodigo().getNombre()),nombreproyecto1.getText(),selectedvalue,fechainicio,fechafin,estado);
                 proyectos.getProyectos().set(jTable3.getSelectedRow(),reemplazo);
+                proyectos.escribir();
+                proyectos.leer();
                 JOptionPane.showMessageDialog(AgregarProyecto, "Proyecto creado");
                 setTablaProyectos();
                 ModificarProyecto.dispose();
@@ -1354,6 +1368,8 @@ public class Main extends javax.swing.JFrame {
                 String fecha=sdf.format(jCalendar8.getDate());
                 Publicaciones reemplazo=new Publicaciones(Integer.parseInt(publicaciones.getPublicaciones().get(jTable4.getSelectedRow()).getCodigo().getNombre()),selectedvalue,fecha,nombrepublicacion1.getText());
                 publicaciones.getPublicaciones().set(jTable4.getSelectedRow(), reemplazo);
+                publicaciones.escribir();
+                publicaciones.leer();
                 JOptionPane.showMessageDialog(AgregarPublicacion, "Publicacion Modificada");
                 setTablaPublicaciones();
                 ModificarPublicacion.dispose();
