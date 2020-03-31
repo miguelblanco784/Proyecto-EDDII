@@ -108,23 +108,23 @@ public class Proyecto {
         for (int i = 0; i < (getCodigo().getSize())-(getCodigo().getNombre().length()); i++) {
              registro+="$";
         }
-        registro+="|"+getNombre().getNombre();
+        registro+=";"+getNombre().getNombre();
         for (int i = 0; i < (getNombre().getSize())-(getNombre().getNombre().length()); i++) {
             registro+="$";
         }
-        registro+="|"+getCodigo_investigador();
+        registro+=";"+getCodigo_investigador();
         for (int i = 0; i < (getCodigo_investigador().getSize())-(getCodigo_investigador().getNombre().length()); i++) {
             registro+="$";
         }
-        registro+="|"+getFecha_inicio().getNombre();
+        registro+=";"+getFecha_inicio().getNombre();
         for (int i = 0; i < (getFecha_inicio().getSize())-(getFecha_inicio().getNombre().length()); i++) {
             registro+="$";
         }
-        registro+="|"+getFecha_fin().getNombre();
+        registro+=";"+getFecha_fin().getNombre();
         for (int i = 0; i < (getFecha_fin().getSize())-(getFecha_fin().getNombre().length()); i++) {
             registro+="$";
         }
-        registro+="|"+getEstado().getNombre();
+        registro+=";"+getEstado().getNombre();
         return registro;
     }
     

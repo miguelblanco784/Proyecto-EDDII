@@ -65,11 +65,11 @@ public class Carrera {
         for (int i = 0; i < (getCodigo().getSize())-(getCodigo().getNombre().length()); i++) {
             registro+="$";
         }
-        registro+="|"+getNombre().getNombre();
+        registro+=";"+getNombre().getNombre();
         for (int i = 0; i < (getNombre().getSize())-(getNombre().getNombre().length()); i++) {
             registro+="$";
         }
-        registro+="|"+getEstado().getNombre();
+        registro+=";"+getEstado().getNombre();
         return registro;
     }
         
