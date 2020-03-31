@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -18,22 +19,20 @@ import java.util.Scanner;
  */
 public class AdmPublicaciones extends TDAarchivo {
     private File archivo=null;
-    private B_Tree publicaciones;
+    private ArrayList<Publicaciones> publicaciones;
     
     AdmPublicaciones (B_Tree publicaciones){
         archivo= new File("publicaciones.txt");
-        setPublicaciones(publicaciones);
         
     }
 
-    public B_Tree getPublicaciones() {
+    public ArrayList<Publicaciones> getPublicaciones() {
         return publicaciones;
     }
 
-    public void setPublicaciones(B_Tree publicaciones) {
+    public void setPublicaciones(ArrayList<Publicaciones> publicaciones) {
         this.publicaciones = publicaciones;
     }
-    
     
     
     
@@ -44,8 +43,11 @@ public class AdmPublicaciones extends TDAarchivo {
         try{
             fw=new FileWriter(archivo, false);
             bw=new BufferedWriter(fw);
-            for (int i = 0; i < publicaciones.size(); i++) {
-                //no comprendo la variable Key de B_Tree asi que no los puedo extraerlos del arbol
+            for (Publicaciones t: publicaciones) {
+                bw.write(t.getCodigo().getNombre()+";");
+                bw.write(t.getCodigo_de_proyecto().getNombre()+";");
+                bw.write(t.getFecha().getNombre()+";");
+                bw.write(t.getRevista().getNombre()+";");
             }
         }
         catch(IOException e){
@@ -56,7 +58,7 @@ public class AdmPublicaciones extends TDAarchivo {
     @Override
     void leer(){
         Scanner sc= null;
-        publicaciones = new B_Tree();
+        publicaciones = new ArrayList();
         if (archivo.exists()){
             try{
                 sc = new Scanner(archivo);
@@ -66,6 +68,7 @@ public class AdmPublicaciones extends TDAarchivo {
                                                                   sc.nextInt(),
                                                                   sc.next(),
                                                                   sc.next());
+                    publicaciones.add(publicacion);
                     //no comprendo las variables Key y Value de B_Tree asi que no los puedo agregar al arbol por ahora
                 }
             }
