@@ -21,11 +21,11 @@ import java.util.logging.Logger;
  */
 public class AdmPublicaciones extends TDAarchivo {
     private File archivo=null;
-    private ArrayList<Publicaciones> publicaciones;
+    private ArrayList<Publicaciones> publicaciones = new ArrayList();
     
     AdmPublicaciones (){
         archivo= new File("publicaciones.txt");
-        
+        publicaciones = new ArrayList<Publicaciones>();
     }
 
     public ArrayList<Publicaciones> getPublicaciones() {
@@ -73,16 +73,44 @@ public class AdmPublicaciones extends TDAarchivo {
     @Override
     void leer(){
         Scanner sc= null;
-        publicaciones = new ArrayList();
+        publicaciones = new ArrayList<Publicaciones>();
         if (archivo.exists()){
             try{
                 sc = new Scanner(archivo);
                 sc.useDelimiter(";");
                 while (sc.hasNext()){
-                    Publicaciones publicacion = new Publicaciones(sc.nextInt(),
-                                                                  sc.nextInt(),
-                                                                  sc.next(),
-                                                                  sc.next());
+                    String temp =sc.next();
+                    String codigo="";
+                    for (int i = 0; i < temp.length(); i++) {
+                        if (temp.charAt(i)!='$'){
+                            codigo+=temp.charAt(i);
+                        }
+                    }
+                    temp=sc.next();
+                    String codproyecto="";
+                    for (int i = 0; i < temp.length(); i++) {
+                        if (temp.charAt(i)!='$'){
+                            codproyecto+=temp.charAt(i);
+                        }
+                    }
+                    temp=sc.next();
+                    String fecha="";
+                    for (int i = 0; i < temp.length(); i++) {
+                        if (temp.charAt(i)!='$'){
+                            fecha+=temp.charAt(i);
+                        }
+                    }
+                    temp=sc.next();
+                    String revista="";
+                    for (int i = 0; i < temp.length(); i++) {
+                        if (temp.charAt(i)!='$'){
+                            revista+=temp.charAt(i);
+                        }
+                    }
+                    Publicaciones publicacion = new Publicaciones(Integer.parseInt(codigo),
+                                                                  Integer.parseInt(codproyecto),
+                                                                  fecha,
+                                                                  revista);
                     publicaciones.add(publicacion);
                     //no comprendo las variables Key y Value de B_Tree asi que no los puedo agregar al arbol por ahora
                 }

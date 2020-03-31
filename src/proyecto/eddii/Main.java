@@ -11,6 +11,13 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.awt.Color;
+import java.util.ArrayList;
+import java.util.Date;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JColorChooser;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -23,8 +30,11 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        carreras.leer();
+        investigadores.leer();
+        publicaciones.leer();
+        proyectos.leer();
         setTablaCarrera();
-        
     }
     
     
@@ -51,7 +61,6 @@ public class Main extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jCalendar1 = new com.toedter.calendar.JCalendar();
         NombreInvestigador = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
@@ -64,9 +73,7 @@ public class Main extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
         nombreproyecto = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jCalendar2 = new com.toedter.calendar.JCalendar();
         jLabel12 = new javax.swing.JLabel();
-        jCalendar3 = new com.toedter.calendar.JCalendar();
         jLabel13 = new javax.swing.JLabel();
         iniciado = new javax.swing.JRadioButton();
         enviado = new javax.swing.JRadioButton();
@@ -81,7 +88,6 @@ public class Main extends javax.swing.JFrame {
         nombrepublicacion = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         jComboBox2 = new javax.swing.JComboBox<>();
-        jCalendar4 = new com.toedter.calendar.JCalendar();
         jLabel17 = new javax.swing.JLabel();
         jButton12 = new javax.swing.JButton();
         ModificarCarrera = new javax.swing.JDialog();
@@ -96,7 +102,6 @@ public class Main extends javax.swing.JFrame {
         jLabel21 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
-        jCalendar5 = new com.toedter.calendar.JCalendar();
         NombreInvestigador1 = new javax.swing.JTextField();
         jComboBox3 = new javax.swing.JComboBox<>();
         jLabel24 = new javax.swing.JLabel();
@@ -109,9 +114,7 @@ public class Main extends javax.swing.JFrame {
         jLabel27 = new javax.swing.JLabel();
         nombreproyecto1 = new javax.swing.JTextField();
         jLabel28 = new javax.swing.JLabel();
-        jCalendar6 = new com.toedter.calendar.JCalendar();
         jLabel29 = new javax.swing.JLabel();
-        jCalendar7 = new com.toedter.calendar.JCalendar();
         jLabel30 = new javax.swing.JLabel();
         iniciado1 = new javax.swing.JRadioButton();
         enviado1 = new javax.swing.JRadioButton();
@@ -126,7 +129,6 @@ public class Main extends javax.swing.JFrame {
         nombrepublicacion1 = new javax.swing.JTextField();
         jLabel35 = new javax.swing.JLabel();
         jComboBox6 = new javax.swing.JComboBox<>();
-        jCalendar8 = new com.toedter.calendar.JCalendar();
         jLabel36 = new javax.swing.JLabel();
         jButton16 = new javax.swing.JButton();
         list1 = new java.awt.List();
@@ -265,9 +267,7 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(jLabel5))
                         .addGap(18, 18, 18)
-                        .addGroup(AgregarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jCalendar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(NombreInvestigador))
+                        .addComponent(NombreInvestigador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(27, 27, 27)
                         .addGroup(AgregarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(AgregarInvestigadorLayout.createSequentialGroup()
@@ -301,9 +301,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(AgregarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AgregarInvestigadorLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(AgregarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel6))
                     .addGroup(AgregarInvestigadorLayout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addGroup(AgregarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -360,19 +358,13 @@ public class Main extends javax.swing.JFrame {
                                 .addGroup(AgregarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel13)
                                     .addComponent(jLabel11))
-                                .addGroup(AgregarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(AgregarProyectoLayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jCalendar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(94, 94, 94))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AgregarProyectoLayout.createSequentialGroup()
-                                        .addGap(27, 27, 27)
-                                        .addComponent(iniciado)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(enviado)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(publicado)
-                                        .addGap(18, 18, 18))))
+                                .addGap(27, 27, 27)
+                                .addComponent(iniciado)
+                                .addGap(18, 18, 18)
+                                .addComponent(enviado)
+                                .addGap(18, 18, 18)
+                                .addComponent(publicado)
+                                .addGap(18, 18, 18))
                             .addGroup(AgregarProyectoLayout.createSequentialGroup()
                                 .addComponent(jLabel10)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -383,10 +375,7 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(jLabel32)
                                 .addGap(18, 18, 18)
                                 .addComponent(jComboBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(AgregarProyectoLayout.createSequentialGroup()
-                                .addComponent(jLabel12)
-                                .addGap(18, 18, 18)
-                                .addComponent(jCalendar3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel12)
                             .addComponent(rechazado)))
                     .addGroup(AgregarProyectoLayout.createSequentialGroup()
                         .addGap(233, 233, 233)
@@ -412,9 +401,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(AgregarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel11)
-                    .addComponent(jCalendar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12)
-                    .addComponent(jCalendar3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel12))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addGroup(AgregarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel13)
@@ -461,11 +448,8 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(jLabel16)
                                 .addGap(18, 18, 18)
                                 .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(AgregarPublicacionLayout.createSequentialGroup()
-                                .addComponent(jLabel17)
-                                .addGap(18, 18, 18)
-                                .addComponent(jCalendar4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel17))
+                        .addContainerGap(146, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AgregarPublicacionLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(AgregarPublicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -490,9 +474,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel16)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addGroup(AgregarPublicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel17)
-                    .addComponent(jCalendar4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel17)
                 .addGap(18, 18, 18)
                 .addComponent(jButton12)
                 .addContainerGap(33, Short.MAX_VALUE))
@@ -606,9 +588,7 @@ public class Main extends javax.swing.JFrame {
                             .addComponent(jLabel23)
                             .addComponent(jLabel22))
                         .addGap(18, 18, 18)
-                        .addGroup(ModificarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jCalendar5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(NombreInvestigador1))
+                        .addComponent(NombreInvestigador1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGap(27, 27, 27)
                         .addGroup(ModificarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(ModificarInvestigadorLayout.createSequentialGroup()
@@ -646,9 +626,7 @@ public class Main extends javax.swing.JFrame {
                 .addGroup(ModificarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(ModificarInvestigadorLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(ModificarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel23)
-                            .addComponent(jCalendar5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jLabel23))
                     .addGroup(ModificarInvestigadorLayout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addGroup(ModificarInvestigadorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -705,19 +683,13 @@ public class Main extends javax.swing.JFrame {
                                 .addGroup(ModificarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(jLabel30)
                                     .addComponent(jLabel28))
-                                .addGroup(ModificarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(ModificarProyectoLayout.createSequentialGroup()
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jCalendar6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(94, 94, 94))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ModificarProyectoLayout.createSequentialGroup()
-                                        .addGap(27, 27, 27)
-                                        .addComponent(iniciado1)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(enviado1)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(publicado1)
-                                        .addGap(18, 18, 18))))
+                                .addGap(27, 27, 27)
+                                .addComponent(iniciado1)
+                                .addGap(18, 18, 18)
+                                .addComponent(enviado1)
+                                .addGap(18, 18, 18)
+                                .addComponent(publicado1)
+                                .addGap(18, 18, 18))
                             .addGroup(ModificarProyectoLayout.createSequentialGroup()
                                 .addComponent(jLabel27)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -730,9 +702,7 @@ public class Main extends javax.swing.JFrame {
                                     .addComponent(jLabel29)
                                     .addComponent(jLabel31))
                                 .addGap(18, 18, 18)
-                                .addGroup(ModificarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCalendar7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(ModificarProyectoLayout.createSequentialGroup()
                         .addGap(335, 335, 335)
                         .addComponent(jButton15))
@@ -755,9 +725,7 @@ public class Main extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(ModificarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel28)
-                    .addComponent(jCalendar6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel29)
-                    .addComponent(jCalendar7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel29))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addGroup(ModificarProyectoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel30)
@@ -799,13 +767,10 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(jLabel35)
                                 .addGap(18, 18, 18)
                                 .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(ModificarPublicacionLayout.createSequentialGroup()
-                                .addComponent(jLabel36)
-                                .addGap(18, 18, 18)
-                                .addComponent(jCalendar8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel36))
+                        .addContainerGap(146, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ModificarPublicacionLayout.createSequentialGroup()
-                        .addGap(0, 181, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton16)
                         .addGap(146, 146, 146))
                     .addGroup(ModificarPublicacionLayout.createSequentialGroup()
@@ -832,9 +797,7 @@ public class Main extends javax.swing.JFrame {
                     .addComponent(jLabel35)
                     .addComponent(jComboBox6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28)
-                .addGroup(ModificarPublicacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel36)
-                    .addComponent(jCalendar8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jLabel36)
                 .addGap(18, 18, 18)
                 .addComponent(jButton16)
                 .addContainerGap(33, Short.MAX_VALUE))
@@ -1176,7 +1139,7 @@ public class Main extends javax.swing.JFrame {
                 }else{
                     estado=0;
                 }
-                carreras.add(new Carrera(carreras.size()+1,nombrecarrera.getText(),estado));
+                carreras.getCarreras().add(new Carrera(carreras.getCarreras().size()+1,nombrecarrera.getText(),estado));
                 JOptionPane.showMessageDialog(AgregarCarrera, "Carrera creada");
                 setTablaCarrera();
             } catch (Exception e) {
@@ -1220,7 +1183,7 @@ public class Main extends javax.swing.JFrame {
                 }else{
                     activo=0;
                 }
-                investigadores.add(new Investigador(investigadores.size()+1,NombreInvestigador.getText(),fecha,selectedvalue,activo));
+                investigadores.getInvestigadores().add(new Investigador(investigadores.getInvestigadores().size()+1,NombreInvestigador.getText(),fecha,selectedvalue,activo));
                 JOptionPane.showMessageDialog(AgregarInvestigador, "Investigador creado");
                 setTablaInvestigadores();
                 AgregarInvestigador.dispose();
@@ -1258,7 +1221,7 @@ public class Main extends javax.swing.JFrame {
                 }else if (rechazado.isSelected()) {
                     estado=3;
                 }
-                proyectos.add(new Proyecto(proyectos.size()+1,nombreproyecto.getText(),selectedvalue,fechainicio,fechafin,estado));
+                proyectos.getProyectos().add(new Proyecto(proyectos.getProyectos().size()+1,nombreproyecto.getText(),selectedvalue,fechainicio,fechafin,estado));
                 JOptionPane.showMessageDialog(AgregarProyecto, "Proyecto creado");
                 setTablaProyectos();
                 AgregarProyecto.dispose();
@@ -1283,7 +1246,7 @@ public class Main extends javax.swing.JFrame {
                 int selectedvalue=Integer.parseInt(jComboBox2.getSelectedItem().toString());
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                 String fecha=sdf.format(jCalendar4.getDate());
-                publicaciones.add(new Publicaciones(publicaciones.size()+1,selectedvalue,fecha,nombrepublicacion.getText()));
+                publicaciones.getPublicaciones().add(new Publicaciones(publicaciones.getPublicaciones().size()+1,selectedvalue,fecha,nombrepublicacion.getText()));
                 JOptionPane.showMessageDialog(AgregarPublicacion, "Publicacion Agregada");
                 setTablaPublicaciones();
                 AgregarPublicacion.dispose();
@@ -1312,8 +1275,8 @@ public class Main extends javax.swing.JFrame {
                     activo=1;
                 }
                 
-                Carrera reemplazo=new Carrera(Integer.parseInt(carreras.get(jTable1.getSelectedRow()).getCodigo().getNombre()),nombrecarrera1.getText(),activo);
-                carreras.set(jTable1.getSelectedRow(),reemplazo);
+                Carrera reemplazo=new Carrera(Integer.parseInt(carreras.getCarreras().get(jTable1.getSelectedRow()).getCodigo().getNombre()),nombrecarrera1.getText(),activo);
+                carreras.getCarreras().set(jTable1.getSelectedRow(),reemplazo);
                 setTablaCarrera();
                 ModificarCarrera.dispose();
             } catch (Exception e) {
@@ -1341,8 +1304,8 @@ public class Main extends javax.swing.JFrame {
                 }else{
                     activo=0;
                 }
-                Investigador reemplazo=new Investigador(Integer.parseInt(investigadores.get(jTable2.getSelectedRow()).getCodigo().getNombre()),NombreInvestigador1.getText(),fecha,selectedvalue,activo);
-                investigadores.set(jTable2.getSelectedRow(),reemplazo);
+                Investigador reemplazo=new Investigador(Integer.parseInt(investigadores.getInvestigadores().get(jTable2.getSelectedRow()).getCodigo().getNombre()),NombreInvestigador1.getText(),fecha,selectedvalue,activo);
+                investigadores.getInvestigadores().set(jTable2.getSelectedRow(),reemplazo);
                 JOptionPane.showMessageDialog(AgregarInvestigador, "Investigador Modificado");
                 setTablaInvestigadores();
                 ModificarInvestigador.dispose();
@@ -1372,8 +1335,8 @@ public class Main extends javax.swing.JFrame {
                 }else if (rechazado1.isSelected()) {
                     estado=3;
                 }
-                Proyecto reemplazo=new Proyecto(Integer.parseInt(proyectos.get(jTable3.getSelectedRow()).getCodigo().getNombre()),nombreproyecto1.getText(),selectedvalue,fechainicio,fechafin,estado);
-                proyectos.set(jTable3.getSelectedRow(),reemplazo);
+                Proyecto reemplazo=new Proyecto(Integer.parseInt(proyectos.getProyectos().get(jTable3.getSelectedRow()).getCodigo().getNombre()),nombreproyecto1.getText(),selectedvalue,fechainicio,fechafin,estado);
+                proyectos.getProyectos().set(jTable3.getSelectedRow(),reemplazo);
                 JOptionPane.showMessageDialog(AgregarProyecto, "Proyecto creado");
                 setTablaProyectos();
                 ModificarProyecto.dispose();
@@ -1390,8 +1353,8 @@ public class Main extends javax.swing.JFrame {
                 int selectedvalue=Integer.parseInt(jComboBox6.getSelectedItem().toString());
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                 String fecha=sdf.format(jCalendar8.getDate());
-                Publicaciones reemplazo=new Publicaciones(Integer.parseInt(publicaciones.get(jTable4.getSelectedRow()).getCodigo().getNombre()),selectedvalue,fecha,nombrepublicacion1.getText());
-                publicaciones.set(jTable4.getSelectedRow(), reemplazo);
+                Publicaciones reemplazo=new Publicaciones(Integer.parseInt(publicaciones.getPublicaciones().get(jTable4.getSelectedRow()).getCodigo().getNombre()),selectedvalue,fecha,nombrepublicacion1.getText());
+                publicaciones.getPublicaciones().set(jTable4.getSelectedRow(), reemplazo);
                 JOptionPane.showMessageDialog(AgregarPublicacion, "Publicacion Modificada");
                 setTablaPublicaciones();
                 ModificarPublicacion.dispose();
@@ -1535,14 +1498,6 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private com.toedter.calendar.JCalendar jCalendar1;
-    private com.toedter.calendar.JCalendar jCalendar2;
-    private com.toedter.calendar.JCalendar jCalendar3;
-    private com.toedter.calendar.JCalendar jCalendar4;
-    private com.toedter.calendar.JCalendar jCalendar5;
-    private com.toedter.calendar.JCalendar jCalendar6;
-    private com.toedter.calendar.JCalendar jCalendar7;
-    private com.toedter.calendar.JCalendar jCalendar8;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
@@ -1615,19 +1570,19 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton rechazado;
     private javax.swing.JRadioButton rechazado1;
     // End of variables declaration//GEN-END:variables
-    ArrayList<Carrera> carreras=new ArrayList<Carrera>();
-    ArrayList<Proyecto> proyectos=new ArrayList<Proyecto>();
-    ArrayList<Publicaciones> publicaciones=new ArrayList<Publicaciones>();
-    ArrayList<Investigador> investigadores=new ArrayList<Investigador>();
+    AdmCarrera carreras=new AdmCarrera();
+    AdmProyecto proyectos=new AdmProyecto();
+    AdmPublicaciones publicaciones=new AdmPublicaciones();
+    AdmInvestigadores investigadores=new AdmInvestigadores();
     
     private void setTablaCarrera(){
         DefaultTableModel model;
         String Carrera[]={"ID","Nombre de la Carrera","Estado"};
-        String data[][]=new String[carreras.size()][3];
-        for (int i = 0; i < carreras.size(); i++) {
-            data[i][0]=carreras.get(i).getCodigo().getNombre();
-            data[i][1]=carreras.get(i).getNombre().getNombre();
-            if (carreras.get(i).getEstado().getNombre()=="1") {
+        String data[][]=new String[carreras.getCarreras().size()][3];
+        for (int i = 0; i < carreras.getCarreras().size(); i++) {
+            data[i][0]=carreras.getCarreras().get(i).getCodigo().getNombre();
+            data[i][1]=carreras.getCarreras().get(i).getNombre().getNombre();
+            if (carreras.getCarreras().get(i).getEstado().getNombre()=="1") {
                 data[i][2]="Activo";
             }else{
                 data[i][2]="Inactivo";
@@ -1640,13 +1595,13 @@ public class Main extends javax.swing.JFrame {
     private void setTablaInvestigadores(){
         DefaultTableModel model;
         String investigador[]={"Codigo","Nombre","Fecha de Ingreso","Carrera de Pertenencia","Estado"};
-         String data[][]=new String[this.investigadores.size()][5];
-         for (int i = 0;  i<investigadores.size () ; i++) {
-            data[i][0]=investigadores.get(i).getCodigo().getNombre();
-            data[i][1]=investigadores.get(i).getNombre().getNombre();
-            data[i][2]=investigadores.get(i).getFechadeingreso().getNombre();
-            data[i][3]=investigadores.get(i).getCodigo_carrera().getNombre();
-            if (carreras.get(i).getEstado().getNombre()=="1") {
+         String data[][]=new String[this.investigadores.getInvestigadores().size()][5];
+         for (int i = 0;  i<investigadores.getInvestigadores().size () ; i++) {
+            data[i][0]=investigadores.getInvestigadores().get(i).getCodigo().getNombre();
+            data[i][1]=investigadores.getInvestigadores().get(i).getNombre().getNombre();
+            data[i][2]=investigadores.getInvestigadores().get(i).getFechadeingreso().getNombre();
+            data[i][3]=investigadores.getInvestigadores().get(i).getCodigo_carrera().getNombre();
+            if (carreras.getCarreras().get(i).getEstado().getNombre()=="1") {
                 data[i][4]="Activo";
             }else{
                 data[i][4]="Inactivo";
@@ -1659,20 +1614,20 @@ public class Main extends javax.swing.JFrame {
     private void setTablaProyectos(){
         DefaultTableModel model;
         String proyecto[]={"Codigo","Nombre","Codigo Investigador","Fecha Inicio","FechaFin","Estado"};
-        String data[][]=new String[proyectos.size()][6];
-        for (int i = 0; i < this.proyectos.size(); i++) {
-            data[i][0]=proyectos.get(i).getCodigo().getNombre();
-            data[i][1]=proyectos.get(i).getNombre().getNombre();
-            data[i][2]=proyectos.get(i).getCodigo_investigador().getNombre();
-            data[i][3]=proyectos.get(i).getFecha_inicio().getNombre();
-            data[i][4]=proyectos.get(i).getFecha_fin().getNombre();
-            if (proyectos.get(i).getEstado().getNombre().equals("0")) {
+        String data[][]=new String[proyectos.getProyectos().size()][6];
+        for (int i = 0; i < this.proyectos.getProyectos().size(); i++) {
+            data[i][0]=proyectos.getProyectos().get(i).getCodigo().getNombre();
+            data[i][1]=proyectos.getProyectos().get(i).getNombre().getNombre();
+            data[i][2]=proyectos.getProyectos().get(i).getCodigo_investigador().getNombre();
+            data[i][3]=proyectos.getProyectos().get(i).getFecha_inicio().getNombre();
+            data[i][4]=proyectos.getProyectos().get(i).getFecha_fin().getNombre();
+            if (proyectos.getProyectos().get(i).getEstado().getNombre().equals("0")) {
                 data[i][5]="Iniciado";
-            }else if (proyectos.get(i).getEstado().getNombre().equals("1")) {
+            }else if (proyectos.getProyectos().get(i).getEstado().getNombre().equals("1")) {
                 data[i][5]="Enviado";
-            }else if (proyectos.get(i).getEstado().getNombre().equals("2")) {
+            }else if (proyectos.getProyectos().get(i).getEstado().getNombre().equals("2")) {
                 data[i][5]="Publicado";
-            }else if (proyectos.get(i).getEstado().getNombre().equals("3")) {
+            }else if (proyectos.getProyectos().get(i).getEstado().getNombre().equals("3")) {
                 data[i][5]="Rechazado";
             }
         }
@@ -1683,12 +1638,12 @@ public class Main extends javax.swing.JFrame {
     private void setTablaPublicaciones(){
         DefaultTableModel model;
         String publicacion[]={"Codigo","Revista / Conferencia","Fecha","Codigo de Proyecto"};
-        String data[][]=new String[publicaciones.size()][5];
-        for (int i = 0; i < publicaciones.size(); i++) {
-            data[i][0]=publicaciones.get(i).getCodigo().getNombre();
-            data[i][1]=publicaciones.get(i).getRevista().getNombre();
-            data[i][2]=publicaciones.get(i).getFecha().getNombre();
-            data[i][3]=publicaciones.get(i).getCodigo_de_proyecto().getNombre();
+        String data[][]=new String[publicaciones.getPublicaciones().size()][5];
+        for (int i = 0; i < publicaciones.getPublicaciones().size(); i++) {
+            data[i][0]=publicaciones.getPublicaciones().get(i).getCodigo().getNombre();
+            data[i][1]=publicaciones.getPublicaciones().get(i).getRevista().getNombre();
+            data[i][2]=publicaciones.getPublicaciones().get(i).getFecha().getNombre();
+            data[i][3]=publicaciones.getPublicaciones().get(i).getCodigo_de_proyecto().getNombre();
         }
         model=new DefaultTableModel(data,publicacion);
         jTable4.setModel(model);
@@ -1696,9 +1651,9 @@ public class Main extends javax.swing.JFrame {
     
     private void ComboModelCarrera(JComboBox combobox){
         try {
-            String model[]=new String[carreras.size()];
-            for (int i = 0; i < carreras.size(); i++) {
-                model[i]=carreras.get(i).getCodigo().getNombre();
+            String model[]=new String[carreras.getCarreras().size()];
+            for (int i = 0; i < carreras.getCarreras().size(); i++) {
+                model[i]=carreras.getCarreras().get(i).getCodigo().getNombre();
             }
             DefaultComboBoxModel mod=new DefaultComboBoxModel(model);
             combobox.setModel(mod);
@@ -1708,9 +1663,9 @@ public class Main extends javax.swing.JFrame {
     
     private void ComboModelInvestigador(JComboBox combobox){
         try {
-            String model[]=new String[investigadores.size()];
-            for (int i = 0; i < investigadores.size(); i++) {
-                model[i]=investigadores.get(i).getCodigo().getNombre();
+            String model[]=new String[investigadores.getInvestigadores().size()];
+            for (int i = 0; i < investigadores.getInvestigadores().size(); i++) {
+                model[i]=investigadores.getInvestigadores().get(i).getCodigo().getNombre();
             }
             DefaultComboBoxModel mod=new DefaultComboBoxModel(model);
             combobox.setModel(mod);
@@ -1720,9 +1675,9 @@ public class Main extends javax.swing.JFrame {
    
     private void ComboModelProyecto(JComboBox combobox){
         try {
-            String model[]=new String[proyectos.size()];
-            for (int i = 0; i < proyectos.size(); i++) {
-                model[i]=proyectos.get(i).getCodigo().getNombre();
+            String model[]=new String[proyectos.getProyectos().size()];
+            for (int i = 0; i < proyectos.getProyectos().size(); i++) {
+                model[i]=proyectos.getProyectos().get(i).getCodigo().getNombre();
             }
             DefaultComboBoxModel mod=new DefaultComboBoxModel(model);
             combobox.setModel(mod);
