@@ -6,7 +6,6 @@
 package proyecto.eddii;
 
 import java.util.Scanner;
-
 /**
  *
  * @author migue
