@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -18,20 +19,20 @@ import java.util.Scanner;
  */
 public class AdmProyecto extends TDAarchivo{
     private File archivo=null;
-    private B_Tree proyectos;
+    private ArrayList<Proyecto> proyectos;
     
     AdmProyecto (B_Tree proyectos){
         archivo= new File("proyectos.txt");
-        setProyectos(proyectos);
     }
 
-    public B_Tree getProyectos() {
+    public ArrayList<Proyecto> getProyectos() {
         return proyectos;
     }
 
-    public void setProyectos(B_Tree proyectos) {
+    public void setProyectos(ArrayList<Proyecto> proyectos) {
         this.proyectos = proyectos;
     }
+    
     
     
     @Override
@@ -41,8 +42,13 @@ public class AdmProyecto extends TDAarchivo{
         try{
             fw=new FileWriter(archivo, false);
             bw=new BufferedWriter(fw);
-            for (int i = 0; i < proyectos.size(); i++) {
-                //no comprendo la variable Key de B_Tree asi que no los puedo extraerlos del arbol
+            for (Proyecto t: proyectos) {
+                bw.write(t.getCodigo().getNombre()+";");
+                bw.write(t.getNombre().getNombre()+";");
+                bw.write(t.getCodigo_investigador().getNombre()+";");
+                bw.write(t.getFecha_inicio().getNombre()+";");
+                bw.write(t.getFecha_fin().getNombre()+";");
+                bw.write(t.getEstado().getNombre()+";");
             }
         }
         catch(IOException e){
@@ -53,7 +59,7 @@ public class AdmProyecto extends TDAarchivo{
     @Override
     void leer(){
         Scanner sc= null;
-        proyectos = new B_Tree();
+        proyectos = new ArrayList();
         if (archivo.exists()){
             try{
                 sc = new Scanner(archivo);
@@ -65,7 +71,7 @@ public class AdmProyecto extends TDAarchivo{
                                                      sc.next(),
                                                      sc.next(),
                                                      sc.nextInt());
-                    //no comprendo las variables Key y Value de B_Tree asi que no los puedo agregar al arbol por ahora
+                    proyectos.add(proyecto);
                 }
             }
             catch (FileNotFoundException | ByteOverweightException e){

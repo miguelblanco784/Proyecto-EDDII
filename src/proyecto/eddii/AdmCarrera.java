@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -18,20 +19,21 @@ import java.util.Scanner;
  */
 public class AdmCarrera extends TDAarchivo{
     private File archivo=null;
-    private B_Tree carreras;
+    private ArrayList<Carrera> carreras;
     
     AdmCarrera (B_Tree carreras){
         archivo= new File("carreras.txt");
-        setCarreras(carreras);
     }
 
-    public B_Tree getCarreras() {
+    public ArrayList<Carrera> getCarreras() {
         return carreras;
     }
 
-    public void setCarreras(B_Tree carreras) {
+    public void setCarreras(ArrayList<Carrera> carreras) {
         this.carreras = carreras;
     }
+
+    
     
     
     
@@ -42,8 +44,10 @@ public class AdmCarrera extends TDAarchivo{
         try{
             fw=new FileWriter(archivo, false);
             bw=new BufferedWriter(fw);
-            for (int i = 0; i < carreras.size(); i++) {
-                //no comprendo la variable Key de B_Tree asi que no los puedo extraerlos del arbol
+            for (Carrera t : carreras) {
+                bw.write(t.getCodigo().getNombre()+";");
+                bw.write(t.getNombre().getNombre()+";");
+                bw.write(t.getEstado().getNombre()+";");
             }
         }
         catch(IOException e){
@@ -54,7 +58,7 @@ public class AdmCarrera extends TDAarchivo{
     @Override
     void leer(){
         Scanner sc= null;
-        carreras = new B_Tree();
+        carreras = new ArrayList();
         if (archivo.exists()){
             try{
                 sc = new Scanner(archivo);
@@ -63,7 +67,7 @@ public class AdmCarrera extends TDAarchivo{
                     Carrera carrera = new Carrera(sc.nextInt(),
                                                   sc.next(),
                                                   sc.nextInt());
-                    //no comprendo las variables Key y Value de B_Tree asi que no los puedo agregar al arbol por ahora
+                    carreras.add(carrera);
                 }
             }
             catch (FileNotFoundException | ByteOverweightException e){
