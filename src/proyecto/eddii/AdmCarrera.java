@@ -25,6 +25,7 @@ public class AdmCarrera extends TDAarchivo{
     
     AdmCarrera (){
         archivo= new File("carreras.txt");
+        carreras=new ArrayList<Carrera>();
     }
 
     public ArrayList<Carrera> getCarreras() {
@@ -75,7 +76,7 @@ public class AdmCarrera extends TDAarchivo{
     @Override
     void leer(){
         Scanner sc= null;
-        carreras = new ArrayList();
+        carreras = new ArrayList<Carrera>();
         if (archivo.exists()){
             try{
                 sc = new Scanner(archivo);

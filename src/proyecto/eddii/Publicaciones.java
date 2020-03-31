@@ -25,7 +25,7 @@ public class Publicaciones {
         setFecha(fecha);
         setRevista(revista);
     }
-
+    
     public Campo getCodigo() {
         return codigo;
     }

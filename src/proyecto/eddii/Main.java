@@ -23,8 +23,11 @@ public class Main extends javax.swing.JFrame {
      */
     public Main() {
         initComponents();
+        carreras.leer();
+        investigadores.leer();
+        publicaciones.leer();
+        proyectos.leer();
         setTablaCarrera();
-        
     }
     
     /**
@@ -1128,7 +1131,7 @@ public class Main extends javax.swing.JFrame {
                 }else{
                     estado=0;
                 }
-                carreras.add(new Carrera(carreras.size()+1,nombrecarrera.getText(),estado));
+                carreras.getCarreras().add(new Carrera(carreras.getCarreras().size()+1,nombrecarrera.getText(),estado));
                 JOptionPane.showMessageDialog(AgregarCarrera, "Carrera creada");
                 setTablaCarrera();
             } catch (Exception e) {
@@ -1172,7 +1175,7 @@ public class Main extends javax.swing.JFrame {
                 }else{
                     activo=0;
                 }
-                investigadores.add(new Investigador(investigadores.size()+1,NombreInvestigador.getText(),fecha,selectedvalue,activo));
+                investigadores.getInvestigadores().add(new Investigador(investigadores.getInvestigadores().size()+1,NombreInvestigador.getText(),fecha,selectedvalue,activo));
                 JOptionPane.showMessageDialog(AgregarInvestigador, "Investigador creado");
                 setTablaInvestigadores();
                 AgregarInvestigador.dispose();
@@ -1210,7 +1213,7 @@ public class Main extends javax.swing.JFrame {
                 }else if (rechazado.isSelected()) {
                     estado=3;
                 }
-                proyectos.add(new Proyecto(proyectos.size()+1,nombreproyecto.getText(),selectedvalue,fechainicio,fechafin,estado));
+                proyectos.getProyectos().add(new Proyecto(proyectos.getProyectos().size()+1,nombreproyecto.getText(),selectedvalue,fechainicio,fechafin,estado));
                 JOptionPane.showMessageDialog(AgregarProyecto, "Proyecto creado");
                 setTablaProyectos();
                 AgregarProyecto.dispose();
@@ -1235,7 +1238,7 @@ public class Main extends javax.swing.JFrame {
                 int selectedvalue=Integer.parseInt(jComboBox2.getSelectedItem().toString());
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                 String fecha=sdf.format(jCalendar4.getDate());
-                publicaciones.add(new Publicaciones(publicaciones.size()+1,selectedvalue,fecha,nombrepublicacion.getText()));
+                publicaciones.getPublicaciones().add(new Publicaciones(publicaciones.getPublicaciones().size()+1,selectedvalue,fecha,nombrepublicacion.getText()));
                 JOptionPane.showMessageDialog(AgregarPublicacion, "Publicacion Agregada");
                 setTablaPublicaciones();
                 AgregarPublicacion.dispose();
@@ -1264,8 +1267,8 @@ public class Main extends javax.swing.JFrame {
                     activo=1;
                 }
                 
-                Carrera reemplazo=new Carrera(Integer.parseInt(carreras.get(jTable1.getSelectedRow()).getCodigo().getNombre()),nombrecarrera1.getText(),activo);
-                carreras.set(jTable1.getSelectedRow(),reemplazo);
+                Carrera reemplazo=new Carrera(Integer.parseInt(carreras.getCarreras().get(jTable1.getSelectedRow()).getCodigo().getNombre()),nombrecarrera1.getText(),activo);
+                carreras.getCarreras().set(jTable1.getSelectedRow(),reemplazo);
                 setTablaCarrera();
                 ModificarCarrera.dispose();
             } catch (Exception e) {
@@ -1293,8 +1296,8 @@ public class Main extends javax.swing.JFrame {
                 }else{
                     activo=0;
                 }
-                Investigador reemplazo=new Investigador(Integer.parseInt(investigadores.get(jTable2.getSelectedRow()).getCodigo().getNombre()),NombreInvestigador1.getText(),fecha,selectedvalue,activo);
-                investigadores.set(jTable2.getSelectedRow(),reemplazo);
+                Investigador reemplazo=new Investigador(Integer.parseInt(investigadores.getInvestigadores().get(jTable2.getSelectedRow()).getCodigo().getNombre()),NombreInvestigador1.getText(),fecha,selectedvalue,activo);
+                investigadores.getInvestigadores().set(jTable2.getSelectedRow(),reemplazo);
                 JOptionPane.showMessageDialog(AgregarInvestigador, "Investigador Modificado");
                 setTablaInvestigadores();
                 ModificarInvestigador.dispose();
@@ -1324,8 +1327,8 @@ public class Main extends javax.swing.JFrame {
                 }else if (rechazado1.isSelected()) {
                     estado=3;
                 }
-                Proyecto reemplazo=new Proyecto(Integer.parseInt(proyectos.get(jTable3.getSelectedRow()).getCodigo().getNombre()),nombreproyecto1.getText(),selectedvalue,fechainicio,fechafin,estado);
-                proyectos.set(jTable3.getSelectedRow(),reemplazo);
+                Proyecto reemplazo=new Proyecto(Integer.parseInt(proyectos.getProyectos().get(jTable3.getSelectedRow()).getCodigo().getNombre()),nombreproyecto1.getText(),selectedvalue,fechainicio,fechafin,estado);
+                proyectos.getProyectos().set(jTable3.getSelectedRow(),reemplazo);
                 JOptionPane.showMessageDialog(AgregarProyecto, "Proyecto creado");
                 setTablaProyectos();
                 ModificarProyecto.dispose();
@@ -1342,8 +1345,8 @@ public class Main extends javax.swing.JFrame {
                 int selectedvalue=Integer.parseInt(jComboBox6.getSelectedItem().toString());
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                 String fecha=sdf.format(jCalendar8.getDate());
-                Publicaciones reemplazo=new Publicaciones(Integer.parseInt(publicaciones.get(jTable4.getSelectedRow()).getCodigo().getNombre()),selectedvalue,fecha,nombrepublicacion1.getText());
-                publicaciones.set(jTable4.getSelectedRow(), reemplazo);
+                Publicaciones reemplazo=new Publicaciones(Integer.parseInt(publicaciones.getPublicaciones().get(jTable4.getSelectedRow()).getCodigo().getNombre()),selectedvalue,fecha,nombrepublicacion1.getText());
+                publicaciones.getPublicaciones().set(jTable4.getSelectedRow(), reemplazo);
                 JOptionPane.showMessageDialog(AgregarPublicacion, "Publicacion Modificada");
                 setTablaPublicaciones();
                 ModificarPublicacion.dispose();
@@ -1559,19 +1562,19 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JRadioButton rechazado;
     private javax.swing.JRadioButton rechazado1;
     // End of variables declaration//GEN-END:variables
-    ArrayList<Carrera> carreras=new ArrayList<Carrera>();
-    ArrayList<Proyecto> proyectos=new ArrayList<Proyecto>();
-    ArrayList<Publicaciones> publicaciones=new ArrayList<Publicaciones>();
-    ArrayList<Investigador> investigadores=new ArrayList<Investigador>();
+    AdmCarrera carreras=new AdmCarrera();
+    AdmProyecto proyectos=new AdmProyecto();
+    AdmPublicaciones publicaciones=new AdmPublicaciones();
+    AdmInvestigadores investigadores=new AdmInvestigadores();
     
     private void setTablaCarrera(){
         DefaultTableModel model;
         String Carrera[]={"ID","Nombre de la Carrera","Estado"};
-        String data[][]=new String[carreras.size()][3];
-        for (int i = 0; i < carreras.size(); i++) {
-            data[i][0]=carreras.get(i).getCodigo().getNombre();
-            data[i][1]=carreras.get(i).getNombre().getNombre();
-            if (carreras.get(i).getEstado().getNombre()=="1") {
+        String data[][]=new String[carreras.getCarreras().size()][3];
+        for (int i = 0; i < carreras.getCarreras().size(); i++) {
+            data[i][0]=carreras.getCarreras().get(i).getCodigo().getNombre();
+            data[i][1]=carreras.getCarreras().get(i).getNombre().getNombre();
+            if (carreras.getCarreras().get(i).getEstado().getNombre()=="1") {
                 data[i][2]="Activo";
             }else{
                 data[i][2]="Inactivo";
@@ -1584,13 +1587,13 @@ public class Main extends javax.swing.JFrame {
     private void setTablaInvestigadores(){
         DefaultTableModel model;
         String investigador[]={"Codigo","Nombre","Fecha de Ingreso","Carrera de Pertenencia","Estado"};
-         String data[][]=new String[this.investigadores.size()][5];
-         for (int i = 0;  i<investigadores.size () ; i++) {
-            data[i][0]=investigadores.get(i).getCodigo().getNombre();
-            data[i][1]=investigadores.get(i).getNombre().getNombre();
-            data[i][2]=investigadores.get(i).getFechadeingreso().getNombre();
-            data[i][3]=investigadores.get(i).getCodigo_carrera().getNombre();
-            if (carreras.get(i).getEstado().getNombre()=="1") {
+         String data[][]=new String[this.investigadores.getInvestigadores().size()][5];
+         for (int i = 0;  i<investigadores.getInvestigadores().size () ; i++) {
+            data[i][0]=investigadores.getInvestigadores().get(i).getCodigo().getNombre();
+            data[i][1]=investigadores.getInvestigadores().get(i).getNombre().getNombre();
+            data[i][2]=investigadores.getInvestigadores().get(i).getFechadeingreso().getNombre();
+            data[i][3]=investigadores.getInvestigadores().get(i).getCodigo_carrera().getNombre();
+            if (carreras.getCarreras().get(i).getEstado().getNombre()=="1") {
                 data[i][4]="Activo";
             }else{
                 data[i][4]="Inactivo";
@@ -1603,20 +1606,20 @@ public class Main extends javax.swing.JFrame {
     private void setTablaProyectos(){
         DefaultTableModel model;
         String proyecto[]={"Codigo","Nombre","Codigo Investigador","Fecha Inicio","FechaFin","Estado"};
-        String data[][]=new String[proyectos.size()][6];
-        for (int i = 0; i < this.proyectos.size(); i++) {
-            data[i][0]=proyectos.get(i).getCodigo().getNombre();
-            data[i][1]=proyectos.get(i).getNombre().getNombre();
-            data[i][2]=proyectos.get(i).getCodigo_investigador().getNombre();
-            data[i][3]=proyectos.get(i).getFecha_inicio().getNombre();
-            data[i][4]=proyectos.get(i).getFecha_fin().getNombre();
-            if (proyectos.get(i).getEstado().getNombre().equals("0")) {
+        String data[][]=new String[proyectos.getProyectos().size()][6];
+        for (int i = 0; i < this.proyectos.getProyectos().size(); i++) {
+            data[i][0]=proyectos.getProyectos().get(i).getCodigo().getNombre();
+            data[i][1]=proyectos.getProyectos().get(i).getNombre().getNombre();
+            data[i][2]=proyectos.getProyectos().get(i).getCodigo_investigador().getNombre();
+            data[i][3]=proyectos.getProyectos().get(i).getFecha_inicio().getNombre();
+            data[i][4]=proyectos.getProyectos().get(i).getFecha_fin().getNombre();
+            if (proyectos.getProyectos().get(i).getEstado().getNombre().equals("0")) {
                 data[i][5]="Iniciado";
-            }else if (proyectos.get(i).getEstado().getNombre().equals("1")) {
+            }else if (proyectos.getProyectos().get(i).getEstado().getNombre().equals("1")) {
                 data[i][5]="Enviado";
-            }else if (proyectos.get(i).getEstado().getNombre().equals("2")) {
+            }else if (proyectos.getProyectos().get(i).getEstado().getNombre().equals("2")) {
                 data[i][5]="Publicado";
-            }else if (proyectos.get(i).getEstado().getNombre().equals("3")) {
+            }else if (proyectos.getProyectos().get(i).getEstado().getNombre().equals("3")) {
                 data[i][5]="Rechazado";
             }
         }
@@ -1627,12 +1630,12 @@ public class Main extends javax.swing.JFrame {
     private void setTablaPublicaciones(){
         DefaultTableModel model;
         String publicacion[]={"Codigo","Revista / Conferencia","Fecha","Codigo de Proyecto"};
-        String data[][]=new String[publicaciones.size()][5];
-        for (int i = 0; i < publicaciones.size(); i++) {
-            data[i][0]=publicaciones.get(i).getCodigo().getNombre();
-            data[i][1]=publicaciones.get(i).getRevista().getNombre();
-            data[i][2]=publicaciones.get(i).getFecha().getNombre();
-            data[i][3]=publicaciones.get(i).getCodigo_de_proyecto().getNombre();
+        String data[][]=new String[publicaciones.getPublicaciones().size()][5];
+        for (int i = 0; i < publicaciones.getPublicaciones().size(); i++) {
+            data[i][0]=publicaciones.getPublicaciones().get(i).getCodigo().getNombre();
+            data[i][1]=publicaciones.getPublicaciones().get(i).getRevista().getNombre();
+            data[i][2]=publicaciones.getPublicaciones().get(i).getFecha().getNombre();
+            data[i][3]=publicaciones.getPublicaciones().get(i).getCodigo_de_proyecto().getNombre();
         }
         model=new DefaultTableModel(data,publicacion);
         jTable4.setModel(model);
@@ -1640,9 +1643,9 @@ public class Main extends javax.swing.JFrame {
     
     private void ComboModelCarrera(JComboBox combobox){
         try {
-            String model[]=new String[carreras.size()];
-            for (int i = 0; i < carreras.size(); i++) {
-                model[i]=carreras.get(i).getCodigo().getNombre();
+            String model[]=new String[carreras.getCarreras().size()];
+            for (int i = 0; i < carreras.getCarreras().size(); i++) {
+                model[i]=carreras.getCarreras().get(i).getCodigo().getNombre();
             }
             DefaultComboBoxModel mod=new DefaultComboBoxModel(model);
             combobox.setModel(mod);
@@ -1652,9 +1655,9 @@ public class Main extends javax.swing.JFrame {
     
     private void ComboModelInvestigador(JComboBox combobox){
         try {
-            String model[]=new String[investigadores.size()];
-            for (int i = 0; i < investigadores.size(); i++) {
-                model[i]=investigadores.get(i).getCodigo().getNombre();
+            String model[]=new String[investigadores.getInvestigadores().size()];
+            for (int i = 0; i < investigadores.getInvestigadores().size(); i++) {
+                model[i]=investigadores.getInvestigadores().get(i).getCodigo().getNombre();
             }
             DefaultComboBoxModel mod=new DefaultComboBoxModel(model);
             combobox.setModel(mod);
@@ -1664,9 +1667,9 @@ public class Main extends javax.swing.JFrame {
    
     private void ComboModelProyecto(JComboBox combobox){
         try {
-            String model[]=new String[proyectos.size()];
-            for (int i = 0; i < proyectos.size(); i++) {
-                model[i]=proyectos.get(i).getCodigo().getNombre();
+            String model[]=new String[proyectos.getProyectos().size()];
+            for (int i = 0; i < proyectos.getProyectos().size(); i++) {
+                model[i]=proyectos.getProyectos().get(i).getCodigo().getNombre();
             }
             DefaultComboBoxModel mod=new DefaultComboBoxModel(model);
             combobox.setModel(mod);
