@@ -1186,6 +1186,8 @@ public class Main extends javax.swing.JFrame {
                     estado=0;
                 }
                 carreras.getCarreras().add(new Carrera(carreras.getCarreras().size()+1,nombrecarrera.getText(),estado));
+                carreras.escribir();
+                carreras.leer();
                 JOptionPane.showMessageDialog(AgregarCarrera, "Carrera creada");
                 setTablaCarrera();
             } catch (Exception e) {
@@ -1230,6 +1232,8 @@ public class Main extends javax.swing.JFrame {
                     activo=0;
                 }
                 investigadores.getInvestigadores().add(new Investigador(investigadores.getInvestigadores().size()+1,NombreInvestigador.getText(),fecha,selectedvalue,activo));
+                investigadores.escribir();
+                investigadores.leer();
                 JOptionPane.showMessageDialog(AgregarInvestigador, "Investigador creado");
                 setTablaInvestigadores();
                 AgregarInvestigador.dispose();
@@ -1268,10 +1272,13 @@ public class Main extends javax.swing.JFrame {
                     estado=3;
                 }
                 proyectos.getProyectos().add(new Proyecto(proyectos.getProyectos().size()+1,nombreproyecto.getText(),selectedvalue,fechainicio,fechafin,estado));
+                proyectos.escribir();
+                proyectos.leer();
                 JOptionPane.showMessageDialog(AgregarProyecto, "Proyecto creado");
                 setTablaProyectos();
                 AgregarProyecto.dispose();
             } catch (Exception e) {
+                e.printStackTrace();
             }
         }else{
             JOptionPane.showMessageDialog(AgregarProyecto, "Llene todos los espacios");
@@ -1293,6 +1300,8 @@ public class Main extends javax.swing.JFrame {
                 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
                 String fecha=sdf.format(jCalendar4.getDate());
                 publicaciones.getPublicaciones().add(new Publicaciones(publicaciones.getPublicaciones().size()+1,selectedvalue,fecha,nombrepublicacion.getText()));
+                publicaciones.escribir();
+                publicaciones.leer();
                 JOptionPane.showMessageDialog(AgregarPublicacion, "Publicacion Agregada");
                 setTablaPublicaciones();
                 AgregarPublicacion.dispose();
@@ -1317,12 +1326,15 @@ public class Main extends javax.swing.JFrame {
                 int activo=-1;
                 if (activo1.isSelected()) {
                     activo=0;
-                }else if (activo1.isSelected()) {
+                }else if (inactivo1.isSelected()) {
                     activo=1;
                 }
                 
                 Carrera reemplazo=new Carrera(Integer.parseInt(carreras.getCarreras().get(jTable1.getSelectedRow()).getCodigo().getNombre()),nombrecarrera1.getText(),activo);
                 carreras.getCarreras().set(jTable1.getSelectedRow(),reemplazo);
+                carreras.escribir();
+                carreras.leer();
+                JOptionPane.showMessageDialog(ModificarCarrera, "Modificacion hecha exitosamente");
                 setTablaCarrera();
                 ModificarCarrera.dispose();
             } catch (Exception e) {
@@ -1352,6 +1364,8 @@ public class Main extends javax.swing.JFrame {
                 }
                 Investigador reemplazo=new Investigador(Integer.parseInt(investigadores.getInvestigadores().get(jTable2.getSelectedRow()).getCodigo().getNombre()),NombreInvestigador1.getText(),fecha,selectedvalue,activo);
                 investigadores.getInvestigadores().set(jTable2.getSelectedRow(),reemplazo);
+                investigadores.escribir();
+                investigadores.leer();
                 JOptionPane.showMessageDialog(AgregarInvestigador, "Investigador Modificado");
                 setTablaInvestigadores();
                 ModificarInvestigador.dispose();
@@ -1383,6 +1397,8 @@ public class Main extends javax.swing.JFrame {
                 }
                 Proyecto reemplazo=new Proyecto(Integer.parseInt(proyectos.getProyectos().get(jTable3.getSelectedRow()).getCodigo().getNombre()),nombreproyecto1.getText(),selectedvalue,fechainicio,fechafin,estado);
                 proyectos.getProyectos().set(jTable3.getSelectedRow(),reemplazo);
+                proyectos.escribir();
+                proyectos.leer();
                 JOptionPane.showMessageDialog(AgregarProyecto, "Proyecto creado");
                 setTablaProyectos();
                 ModificarProyecto.dispose();
@@ -1401,6 +1417,8 @@ public class Main extends javax.swing.JFrame {
                 String fecha=sdf.format(jCalendar8.getDate());
                 Publicaciones reemplazo=new Publicaciones(Integer.parseInt(publicaciones.getPublicaciones().get(jTable4.getSelectedRow()).getCodigo().getNombre()),selectedvalue,fecha,nombrepublicacion1.getText());
                 publicaciones.getPublicaciones().set(jTable4.getSelectedRow(), reemplazo);
+                publicaciones.escribir();
+                publicaciones.leer();
                 JOptionPane.showMessageDialog(AgregarPublicacion, "Publicacion Modificada");
                 setTablaPublicaciones();
                 ModificarPublicacion.dispose();
@@ -1655,7 +1673,7 @@ public class Main extends javax.swing.JFrame {
             data[i][1]=investigadores.getInvestigadores().get(i).getNombre().getNombre();
             data[i][2]=investigadores.getInvestigadores().get(i).getFechadeingreso().getNombre();
             data[i][3]=investigadores.getInvestigadores().get(i).getCodigo_carrera().getNombre();
-            if (carreras.getCarreras().get(i).getEstado().getNombre()=="1") {
+            if ("1".equals(carreras.getCarreras().get(i).getEstado().getNombre())) {
                 data[i][4]="Activo";
             }else{
                 data[i][4]="Inactivo";

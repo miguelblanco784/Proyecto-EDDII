@@ -112,7 +112,7 @@ public class Proyecto {
         for (int i = 0; i < (getNombre().getSize())-(getNombre().getNombre().length()); i++) {
             registro+="$";
         }
-        registro+=";"+getCodigo_investigador();
+        registro+=";"+getCodigo_investigador().getNombre();
         for (int i = 0; i < (getCodigo_investigador().getSize())-(getCodigo_investigador().getNombre().length()); i++) {
             registro+="$";
         }
