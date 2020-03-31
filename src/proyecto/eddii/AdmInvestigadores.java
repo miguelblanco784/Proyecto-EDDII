@@ -25,6 +25,7 @@ public class AdmInvestigadores extends TDAarchivo {
     
     AdmInvestigadores (){
         archivo= new File("investigadores.txt");
+        investigadores = new ArrayList<Investigador>();
     }
 
     public ArrayList<Investigador> getInvestigadores() {
@@ -75,7 +76,7 @@ public class AdmInvestigadores extends TDAarchivo {
     @Override
     void leer(){
         Scanner sc= null;
-        investigadores = new ArrayList();
+        investigadores = new ArrayList<Investigador>();
         if (archivo.exists()){
             try{
                 sc = new Scanner(archivo);

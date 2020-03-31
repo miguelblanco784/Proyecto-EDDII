@@ -25,7 +25,7 @@ public class AdmPublicaciones extends TDAarchivo {
     
     AdmPublicaciones (){
         archivo= new File("publicaciones.txt");
-        
+        publicaciones = new ArrayList<Publicaciones>();
     }
 
     public ArrayList<Publicaciones> getPublicaciones() {
@@ -73,7 +73,7 @@ public class AdmPublicaciones extends TDAarchivo {
     @Override
     void leer(){
         Scanner sc= null;
-        publicaciones = new ArrayList();
+        publicaciones = new ArrayList<Publicaciones>();
         if (archivo.exists()){
             try{
                 sc = new Scanner(archivo);

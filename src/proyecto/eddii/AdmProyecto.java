@@ -25,6 +25,7 @@ public class AdmProyecto extends TDAarchivo{
     
     AdmProyecto (){
         archivo= new File("proyectos.txt");
+        proyectos = new ArrayList<Proyecto>();
     }
 
     public ArrayList<Proyecto> getProyectos() {
@@ -74,7 +75,7 @@ public class AdmProyecto extends TDAarchivo{
     @Override
     void leer(){
         Scanner sc= null;
-        proyectos = new ArrayList();
+        proyectos = new ArrayList<Proyecto>();
         if (archivo.exists()){
             try{
                 sc = new Scanner(archivo);
